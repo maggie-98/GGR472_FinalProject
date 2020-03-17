@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8 />
+        <title>Migration Canada</title>
+        <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+        <script src="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js"></script>
+        <link href="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css" rel="stylesheet" />
+        <div id='map'> </div>
+        <div class='map-overlay' id='features'><h2>2016 Census Information</h2><div id='pd'>
+        <p>Hover over a region!</p></div></div>
+        <div class='map-overlay' id='legend'><h4>Legend</h4></div>
+        <style>
+            body { margin:0; padding:0; }
+            h2,
+            h3 {margin: 10px;font-size: 1.2em;}
+
+            h3 {font-size: 1em;}
+
+            p {
+              font-size: 0.85em;
+              margin: 10px;
+              text-align: left;
+            }
+            #map {position:absolute; top:0; bottom:0; width:100%;}
+            .map-overlay {
+              position: absolute;
+              bottom: 0;
+              right: 0;
+              background: rgba(255, 255, 255, 0.8);
+              margin-right: 20px;
+              font-family: Arial, sans-serif;
+              overflow: auto;
+              border-radius: 3px;
+            }
+
+            #features {
+              top: 0;
+              height: 800px;
+              margin-top: 20px;
+              width: 300px;
+            }
+
+            #legend {
+              padding: 10px;
+              box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+              line-height: 18px;
+              height: 190px;
+              margin-bottom: 40px;
+              width: 150px;
+            }
+
+            .legend-key {
+              display: inline-block;
+              border-radius: 20%;
+              width: 10px;
+              height: 10px;
+              margin-right: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoibW1hOTgiLCJhIjoiY2s1OGF5bGxhMG1oMjNlbzR1dWYybnFqbCJ9.MDPPnfBmlPCWmtCtpePJyg';
+        var map = new mapboxgl.Map({
+            container: 'map', //container id in HTML
+            style: 'mapbox://styles/mma98/ck7w5wvd401wf1imtuhrzjv9w',  //stylesheet location
+            center: [-84, 59.410],  // starting point, longitude/latitude
+            zoom: 3.12 // starting zoom level
+        });
+        </script>
+    </body>
+</html>
